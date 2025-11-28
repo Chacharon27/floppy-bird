@@ -1,0 +1,68 @@
+* { box-sizing: border-box; }
+html,body { height: 100%; margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial; -webkit-font-smoothing:antialiased; }
+#wrapper {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 18px;
+  align-items: start;
+  padding: 24px;
+  background: linear-gradient(#9be7ff, #64c8ff 60%, #e9fbe9 100%);
+}
+canvas {
+  width: 100%;
+  max-width: 720px;
+  height: calc((700/480) * min(720px, 100%));
+  border-radius: 12px;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.18);
+  background: transparent;
+  display: block;
+}
+
+/* Controls column */
+#controls {
+  align-self: start;
+  background: rgba(255,255,255,0.9);
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+.top-row {
+  display:flex;
+  gap:12px;
+  align-items:center;
+  justify-content: space-between;
+}
+.top-row label { font-size: 13px; color:#3a5560; margin-right:6px; }
+#volume { vertical-align: middle; }
+#best { font-weight:700; color:#083344; }
+
+.mobile-row { display:flex; gap:10px; margin-top:12px; justify-content:center; }
+#flapBtn, #pauseBtn {
+  padding:12px 18px;
+  border-radius:10px;
+  border:none;
+  font-weight:700;
+  background:#ffdd57;
+  cursor:pointer;
+  flex:1;
+  min-width: 0;
+}
+#flapBtn { background: linear-gradient(#ffd84d,#ffc22a); font-size:16px; }
+#pauseBtn { background:#ffd; color:#333; }
+
+#leaderboard { margin-top:14px; }
+#leaderboard h3 { margin:6px 0; font-size:16px; }
+#boardList { padding-left:18px; margin:6px 0 0 0; }
+#saveScore { margin-top:10px; display:flex; gap:8px; }
+#playerName { flex:1; padding:8px; border-radius:8px; border:1px solid #ddd; }
+#saveBtn { padding:8px 12px; border-radius:8px; border:none; background:#6dd3a7; color:#063; font-weight:700; cursor:pointer; }
+
+.hidden { display:none; }
+
+/* Responsive: on narrow screens stack */
+@media (max-width: 980px) {
+  #wrapper { grid-template-columns: 1fr; padding: 14px; gap:12px; }
+  #controls { width:100%; }
+  canvas { height: calc((700/480) * 100vw); }
+}

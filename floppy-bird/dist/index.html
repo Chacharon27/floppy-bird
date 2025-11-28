@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Floppy Bird</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <div id="wrapper">
+  <canvas id="gameCanvas" width="480" height="700"></canvas>
+
+  <div id="controls">
+    <div class="top-row">
+      <div>
+        <label for="difficulty">Difficulty</label>
+        <select id="difficulty">
+          <option value="easy">Easy</option>
+          <option value="normal" selected>Normal</option>
+          <option value="hard">Hard</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="volume">Music</label>
+        <input id="volume" type="range" min="0" max="1" step="0.01" value="0.28">
+        <button id="muteBtn">Mute</button>
+      </div>
+
+      <div id="best">Best: 0</div>
+    </div>
+
+    <div class="mobile-row">
+      <button id="flapBtn" aria-label="Flap">FLAP</button>
+      <button id="pauseBtn" aria-label="Pause">Pause</button>
+    </div>
+
+    <div id="leaderboard">
+      <h3>Leaderboard</h3>
+      <ol id="boardList"></ol>
+      <div id="saveScore" class="hidden">
+        <input id="playerName" placeholder="Your name (max 12)" maxlength="12">
+        <button id="saveBtn">Save Score</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
